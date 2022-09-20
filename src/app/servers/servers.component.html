@@ -1,0 +1,4 @@
+<button class="btn btn-primary" (click)="onShowDetails()">Display Details</button>
+<p>Secret Password: <span *ngIf="showDetails">{{secretPassword}}</span></p>
+<p *ngFor="let log of logs; let i = index" [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'yellow'}"
+    [ngClass]="{whiteColor: i >= 4}">{{log}}</p>
