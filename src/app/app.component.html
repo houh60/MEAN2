@@ -1,8 +1,9 @@
-<h1>This is the app component.</h1>
 <div class="container">
+    <app-cockpit (serverAdded)="onServerAdded($event)"></app-cockpit>
+    <hr>
     <div class="row">
         <div class="col-xs-12">
-            <app-servers></app-servers>
+            <app-server-element *ngFor="let element of serverElements" [serverElement]="element"></app-server-element>
         </div>
     </div>
 </div>
