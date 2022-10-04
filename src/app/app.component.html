@@ -1,9 +1,19 @@
 <div class="container">
-    <app-cockpit (serverAdded)="onServerAdded($event)"></app-cockpit>
+    <!-- <app-cockpit (serverOrBluePrintAdded)="onServerAdded($event)"></app-cockpit> -->
     <hr>
     <div class="row">
         <div class="col-xs-12">
-            <app-server-element *ngFor="let element of serverElements" [serverElement]="element"></app-server-element>
+            <!-- <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy First Component</button>
+            <app-server-element *ngFor="let element of serverElements" [serverElement]="element"></app-server-element> -->
+            <app-game-control (numChanged)="onNumChanged($event)"></app-game-control>
+            <div class="row">
+                <div class="col-xs-6">
+                    <app-even *ngFor="let evenNum of evenNums" [even]="evenNum"></app-even>
+                </div>
+                <div class="col-xs-6">
+                    <app-odd *ngFor="let oddNum of oddNums" [odd]="oddNum"></app-odd>
+                </div>
+            </div>
         </div>
     </div>
 </div>
