@@ -29,4 +29,9 @@ export class AppComponent { //
             this.oddNums.push(e);
         }
     }
+
+    clearUp() {
+        this.evenNums = [];
+        this.oddNums = [];
+    }
 }
