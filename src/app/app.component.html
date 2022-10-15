@@ -5,7 +5,7 @@
         <div class="col-xs-12">
             <!-- <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy First Component</button>
             <app-server-element *ngFor="let element of serverElements" [serverElement]="element"></app-server-element> -->
-            <app-game-control (numChanged)="onNumChanged($event)" (clearUpEverything)="clearUp()"></app-game-control>
+            <!-- <app-game-control (numChanged)="onNumChanged($event)" (clearUpEverything)="clearUp()"></app-game-control>
             <div class="row">
                 <div class="col-xs-6">
                     <app-even *ngFor="let evenNum of evenNums" [even]="evenNum"></app-even>
@@ -13,7 +13,22 @@
                 <div class="col-xs-6">
                     <app-odd *ngFor="let oddNum of oddNums" [odd]="oddNum"></app-odd>
                 </div>
-            </div>
+            </div> -->
+            <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">Only Show {{onlyOdd ? 'Even' : 'Odd'}}
+                Numbers</button>
+            <ul class="list-group" ngClass="{{onlyOdd ? 'odd' : 'even'}}">
+                <div *appUnless="!onlyOdd">
+                    <li class="list-group-item" *ngFor="let number of evenNums"
+                        [ngStyle]="{'background-color': onlyOdd ? 'green' : 'yellow'}">{{number}}</li>
+                </div>
+                <div *appUnless="onlyOdd">
+                    <li class="list-group-item" *ngFor="let number of oddNums"
+                        [ngStyle]="{'background-color': onlyOdd ? 'green' : 'yellow'}">{{number}}</li>
+                </div>
+            </ul>
+            <p appBasicHighlight>Style me with basic directive!</p>
+            <p appBetterHighlight [highlightColor]="'black'" [defaultColor]="'#7FFF00'">Style me with better directive!
+            </p>
         </div>
     </div>
 </div>
