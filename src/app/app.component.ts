@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {//
     numbers = [1, 2, 3, 4, 5, 6];
     onlyOdd = false;
 
+    value = 1;
+
     ngOnInit(): void {
         for(let num of this.numbers) {
             if(num % 2 == 0) {
